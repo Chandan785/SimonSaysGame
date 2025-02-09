@@ -1,16 +1,18 @@
 let gameSequence = [];
 let playerSequence = [];
-
 let buttonColours = ["red", "blue", "green", "yellow"];
 let gameStarted = false;
 let level = 0;
+let highScore = localStorage.getItem("highScore") || 0; // Retrieve saved high score
 
 let h2 = document.querySelector("h2");
+let highScoreDisplay = document.createElement("h3");
+highScoreDisplay.innerText = `High Score: ${highScore}`;
+document.body.appendChild(highScoreDisplay);
 
 // Start game on keypress
 document.addEventListener("keypress", function () {
   if (!gameStarted) {
-    console.log("Game started");
     gameStarted = true;
     level = 0;
     gameSequence = [];
@@ -21,7 +23,7 @@ document.addEventListener("keypress", function () {
 // Flash effect
 function btnFlash(btn) {
   btn.classList.add("flash");
-  setTimeout(function () {
+  setTimeout(() => {
     btn.classList.remove("flash");
   }, 200);
 }
@@ -45,17 +47,19 @@ function btnClick() {
   let clickedButton = this;
   let clickedColour = clickedButton.id;
   playerSequence.push(clickedColour);
-  
+
   btnFlash(clickedButton); // Flash effect on click
   checkAnswer(playerSequence.length - 1);
 }
 
+// Check player's input against game sequence
 function checkAnswer(currentLevel) {
   if (playerSequence[currentLevel] === gameSequence[currentLevel]) {
     if (playerSequence.length === gameSequence.length) {
       setTimeout(nextSequence, 1000);
     }
   } else {
+    updateHighScore();
     h2.innerText = "Game Over! Press Any Key to Restart";
     document.body.classList.add("game-over");
     setTimeout(() => {
@@ -64,6 +68,15 @@ function checkAnswer(currentLevel) {
 
     gameStarted = false;
     gameSequence = [];
+  }
+}
+
+// Update high score if the player sets a new record
+function updateHighScore() {
+  if (level > highScore) {
+    highScore = level;
+    localStorage.setItem("highScore", highScore);  // Save high score
+    highScoreDisplay.innerText = `High Score: ${highScore}`;
   }
 }
 
