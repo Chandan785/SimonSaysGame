@@ -21,7 +21,6 @@ The **Simon Says Game** is a fun, interactive memory-based game where players mu
 │-- index.html   # Main HTML file
 │-- simon.css    # Styling for the game
 │-- simon.js     # JavaScript logic
-│-- sounds/      # (Optional) Sound files for button clicks
 ```
 
 ## 🚀 Deployment on Github
