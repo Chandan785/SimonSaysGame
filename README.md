@@ -26,9 +26,8 @@ The **Simon Says Game** is a fun, interactive memory-based game where players mu
 ## 🚀 Deployment on Github
 To deploy this game on Netlify:
 1. Upload your project to GitHub.
-<<<<<<< HEAD
 2. Play the Game [SimonSays](https://simonsays7078.netlify.app/).
->>>>>>> e571fb7a76ea7e98e6a64c86c55ce4eadaeca99e
+
 
 ## 💡 Future Enhancements
 - Add sound effects for each button press. 
