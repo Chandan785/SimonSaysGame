@@ -18,12 +18,15 @@ The **Simon Says Game** is a fun, interactive memory-based game where players mu
 ## 📂 Project Structure
 ```
 /simon-says-game
-│-- index.html   # Main HTML file
-│-- simon.css    # Styling for the game
-│-- simon.js     # JavaScript logic
+ /public
+  │-- index.html   # Main HTML file
+  │-- simon.css    # Styling for the game
+  │-- simon.js     # JavaScript logic
+|-- Package.json
+|-- README.md
 ```
 
-## 🚀 Deployment on Github
+## 🚀 Deployment on Netlify
 To deploy this game on Netlify:
 1. Upload your project to GitHub.
 2. Play the Game [SimonSays](https://simonsays7078.netlify.app/).
