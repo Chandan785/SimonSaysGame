@@ -35,7 +35,6 @@ To deploy this game on Netlify:
 ## 💡 Future Enhancements
 - Add sound effects for each button press. 
 - Implement difficulty levels.
-- Add a leaderboard to track high scores.
 
 ## 📜 License
 This project is open-source and free to use. Feel free to modify and improve!
